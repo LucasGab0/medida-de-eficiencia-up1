@@ -1,0 +1,31 @@
+package me1;
+
+import java.util.Scanner;
+
+public class salariofuncionario{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o nome do funcionário: ");
+        String nome = sc.nextLine();
+        System.out.print("Digite o salário do funcionário: ");
+        double salario = sc.nextDouble();
+        System.out.print("Digite quantos anos o funcionário trabalha na empresa: ");
+        int anosTrabalhados = sc.nextInt();
+
+        double aumento;
+        if (anosTrabalhados < 3) {
+            aumento = 0.03;
+        } else if (anosTrabalhados < 10) {
+            aumento = 0.125;
+        } else {
+            aumento = 0.20;
+        }
+        double novoSalario = salario + (salario * aumento);
+        
+        System.out.printf("O novo salário de %s será: R$%.2f%n", nome, novoSalario);
+        
+        sc.close();
+    }
+ 
+}
